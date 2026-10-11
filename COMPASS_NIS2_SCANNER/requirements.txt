@@ -1,0 +1,5 @@
+streamlit>=1.30.0
+plotly>=5.18.0
+reportlab>=4.0.8
+pandas>=2.1.0
+matplotlib>=3.8.0

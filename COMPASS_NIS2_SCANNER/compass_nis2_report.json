@@ -1,0 +1,61 @@
+{
+    "scanner_metadata": {
+        "hostname": "02d95e2237ef",
+        "os": "Linux",
+        "os_release": "6.18.33.2-microsoft-standard-WSL2",
+        "os_version": "#1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026",
+        "architecture": "x86_64",
+        "scan_time": "2026-10-06T20:46:20.005129"
+    },
+    "nis2_compliance_results": [
+        {
+            "nis2_control_id": "NIS2-Art21-2g-01",
+            "category": "Igiene Informatica (Firewall)",
+            "requirement_reference": "Art. 21.2(g)",
+            "status": "NON-COMPLIANT",
+            "details": "Firewall non attivo o non configurato."
+        },
+        {
+            "nis2_control_id": "NIS2-Art21-2h-01",
+            "category": "Crittografia (Cifratura Dati)",
+            "requirement_reference": "Art. 21.2(h)",
+            "status": "NON-COMPLIANT",
+            "details": "Nessuna partizione cifrata con LUKS rilevata."
+        },
+        {
+            "nis2_control_id": "NIS2-SB-01",
+            "category": "Hardening &amp; Security Baseline",
+            "requirement_reference": "Art. 21.2(e)",
+            "status": "NON-COMPLIANT",
+            "details": "SSH root login abilitato o non esplicitamente disabilitato."
+        },
+        {
+            "nis2_control_id": "NIS2-Art21-2e-01",
+            "category": "Patch Management",
+            "requirement_reference": "Art. 21.2(e)",
+            "status": "COMPLIANT",
+            "details": "Uptime sistema e stato sistema:"
+        },
+        {
+            "nis2_control_id": "NIS2-Art21-2i-01",
+            "category": "Controllo Accessi &amp; Privilegi",
+            "requirement_reference": "Art. 21.2(i)",
+            "status": "NON-COMPLIANT",
+            "details": "Esecuzione dello scanner avviata direttamente come utente root."
+        },
+        {
+            "nis2_control_id": "NIS2-Art21-2c-01",
+            "category": "Continuità Operativa &amp; Backup",
+            "requirement_reference": "Art. 21.2(c)",
+            "status": "NON-COMPLIANT",
+            "details": "Nessun job di backup automatico evidente in cron/systemctl."
+        },
+        {
+            "nis2_control_id": "NIS2-Art21-2d-01",
+            "category": "Riduzione Superficie di Attacco",
+            "requirement_reference": "Art. 21.2(d)",
+            "status": "COMPLIANT",
+            "details": "Superficie di attacco ridotta: 0 porte in ascolto."
+        }
+    ]
+}

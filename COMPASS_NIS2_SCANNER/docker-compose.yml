@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  compass-dashboard:
+    build: .
+    container_name: compass_nis2_app
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./:/app
+    environment:
+      - STREAMLIT_SERVER_HEADLESS=true
