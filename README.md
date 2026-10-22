@@ -32,34 +32,34 @@ COMPASS è stata progettata seguendo rigorosi principi di sicurezza e robustezza
 
 
 
-\##  Guida all'Avvio (Deployment con Docker)
+## Nota Importante: Modalità Demo vs Scansione Reale
 
-Il modo più rapido e sicuro per eseguire COMPASS in un ambiente di produzione isolato è l'utilizzo di \*\*Docker\*\*.
-Dopo aver installato Docker Desktop eseguire i seguenti comandi:
+Per testare o utilizzare COMPASS, puoi scegliere tra due modalità operative:
 
-1. git clone https://github.com/elisource3/compass-nis2-dashboard.git
+### 1. Modalità Demo (Consigliata per una prova rapida)
+* **Requisiti:** Solo [Docker Desktop](https://www.docker.com/) e Docker Compose.
+* **Python sul PC locale:** **Non necessario.** (L'interprete Python e le librerie necessarie sono già inclusi e isolati all'interno dell'immagine Docker).
+* **Come funziona:** Avviando il container, la dashboard caricherà un file di esempio (`sample_report.json`) già presente nel repository. Questo ti permette di esplorare immediatamente l'intera interfaccia grafica, i grafici a radar e le guide di remediation senza configurare nulla sul tuo sistema.
 
-2. cd compass-nis2-dashboard\COMPASS_NIS2_SCANNER
+### 2. Modalità Audit Reale (Esecuzione dello Scanner)
+Se desideri effettuare un'analisi tecnica reale della tua macchina per generare un report di conformità personalizzato:
+* **Python sul PC locale:** **Necessario.**
+* **Perché non eseguire lo scanner dentro Docker?** 
+  Eseguire lo script `scanner.py` all'interno del container Docker **non è corretto né consigliato**: il container gira su un ambiente Linux isolato (tramite WSL o motore Docker), quindi lo scanner analizzerebbe soltanto le impostazioni di quel minuscolo sistema virtuale, **e non il tuo vero sistema operativo host (es. Windows)**.
 
-3. docker-compose up --build
+---
 
-4. python scanner.py
+## Guida all'Avvio (Deployment con Docker)
 
-5. Spostarsi sull'indirizzo localhost e la porta generata da Docker sul browser che si preferisce
+### Prerequisiti
+- [Docker](https://www.docker.com/) e [Docker Compose](https://docs.docker.com/compose/) installati sul sistema.
 
+### Passaggi per l'esecuzione rapida (Modalità Demo):
 
-
-\### Prerequisiti
-
-\* \[Docker](https://www.docker.com/) e \[Docker Compose](https://docs.docker.com/compose/) installati sul sistema.
-\* \[Python](https://www.python.org/downloads/) installato sul sistema.
-
-
-\### 1. Clona il Repository
-
-```bash
-
-git clone https://github.com/elisource3/compass-nis2-dashboard.git
+1. **Clona il Repository e accedi alla cartella:**
+   ```bash
+   git clone [https://github.com/elisource3/compass-nis2-dashboard.git](https://github.com/elisource3/compass-nis2-dashboard.git)
+   cd compass-nis2-dashboard/COMPASS_NIS2_SCANNER
 
 cd compass-nis2-dashboard\COMPASS_NIS2_SCANNER
 
