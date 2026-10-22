@@ -2,7 +2,7 @@
     "scanner_metadata": {
         "hostname": "HOSTPROVA",
         "os": "Windows",
-        "os_release": "6.18.33.2-microsoft-standard-WSL2",
+        "os_release": "x.x.x.x-microsoft-standard-WSL2",
         "os_version": "#x",
         "architecture": "x86_64",
         "scan_time": "2026-10-06T20:46:20.005129"
