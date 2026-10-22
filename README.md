@@ -34,9 +34,18 @@ COMPASS è stata progettata seguendo rigorosi principi di sicurezza e robustezza
 
 \##  Guida all'Avvio (Deployment con Docker)
 
-
-
 Il modo più rapido e sicuro per eseguire COMPASS in un ambiente di produzione isolato è l'utilizzo di \*\*Docker\*\*.
+Dopo aver installato Docker Desktop eseguire i seguenti comandi:
+
+1. git clone https://github.com/elisource3/compass-nis2-dashboard.git
+
+2. cd compass-nis2-dashboard
+
+3. docker-compose up --build
+
+4. py scanner.py
+
+5. Spostarsi sull'indirizzo localhost e la porta generata da Docker sul browser che si preferisce
 
 
 
@@ -50,7 +59,7 @@ Il modo più rapido e sicuro per eseguire COMPASS in un ambiente di produzione i
 
 ```bash
 
-git clone \[https://github.com/tuo-username/compass-nis2-dashboard.git](https://github.com/tuo-username/compass-nis2-dashboard.git)
+git clone https://github.com/elisource3/compass-nis2-dashboard.git
 
 cd compass-nis2-dashboard
 
