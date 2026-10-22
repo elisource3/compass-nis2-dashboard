@@ -61,5 +61,5 @@ Dopo aver installato Docker Desktop eseguire i seguenti comandi:
 
 git clone https://github.com/elisource3/compass-nis2-dashboard.git
 
-cd compass-nis2-dashboard
+cd COMPASS_NIS2_SCANNER
 
