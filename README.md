@@ -52,7 +52,7 @@ Dopo aver installato Docker Desktop eseguire i seguenti comandi:
 \### Prerequisiti
 
 \* \[Docker](https://www.docker.com/) e \[Docker Compose](https://docs.docker.com/compose/) installati sul sistema.
-
+\* \[Python](https://www.python.org/downloads/) installato sul sistema.
 
 
 \### 1. Clona il Repository
