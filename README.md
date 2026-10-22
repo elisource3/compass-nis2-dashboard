@@ -43,7 +43,7 @@ Dopo aver installato Docker Desktop eseguire i seguenti comandi:
 
 3. docker-compose up --build
 
-4. py scanner.py
+4. python scanner.py
 
 5. Spostarsi sull'indirizzo localhost e la porta generata da Docker sul browser che si preferisce
 
