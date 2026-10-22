@@ -709,7 +709,7 @@ with col2:
 with col3:
     st.metric("HUMAN CONTROLS OK", f"{compliant_human} / {total_human}")
 with col4:
-    # 🛡️ Sanitizzazione del livello di rischio globale
+    # Sanitizzazione del livello di rischio globale
     safe_global_risk = html.escape(str(global_risk))
 
     st.markdown(
@@ -728,7 +728,7 @@ st.divider()
 col_left, col_right = st.columns([1, 1])
 
 with col_left:
-    st.subheader("📊 CRITICALITY DISTRIBUTION OF NON-COMPLIANCES")
+    st.subheader("CRITICALITY DISTRIBUTION OF NON-COMPLIANCES")
 
     df_severity = pd.DataFrame([
         {"Criticality": "CRITICAL", "Count": crit_counts["CRITICAL"]},
@@ -753,13 +753,13 @@ with col_left:
     st.plotly_chart(fig_sev, use_container_width=True)
 
 with col_right:
-    st.subheader("🎯 NIS2 SECURITY POSTURE RADAR")
+    st.subheader("NIS2 SECURITY POSTURE RADAR")
 
-    radar_labels = [c["category"].upper() for c in controls]
+    radar_labels = [c["category"].upper().replace("&AMP;", "&").replace("&", "&") for c in controls]
     radar_scores = [100 if c["status"] == "COMPLIANT" else 0 for c in controls]
 
     for h in evaluated_human_controls:
-        radar_labels.append(h["category"].upper())
+        radar_labels.append(h["category"].upper().replace("&AMP;", "&").replace("&", "&"))
         radar_scores.append(100 if h["checked"] else 0)
 
     fig_radar = go.Figure(go.Scatterpolar(
@@ -787,7 +787,7 @@ with col_right:
 # --- HISTORICAL AUDITS TRACKING ---
 if show_history and len(history) > 1:
     st.divider()
-    st.subheader("📈 HISTORICAL AUDITS TRACKING")
+    st.subheader("HISTORICAL AUDITS TRACKING")
 
     history_df = pd.DataFrame(history)
     history_df["Date"] = pd.to_datetime(history_df["Date"])
@@ -856,7 +856,7 @@ if show_history and len(history) > 1:
 # --- SUMMARY TABLE & EXPORT SECTION ---
 # ==============================================================================
 st.divider()
-st.subheader("📋 NIS2 AUDIT SUMMARY TABLE & EXPORT")
+st.subheader("NIS2 AUDIT SUMMARY TABLE & EXPORT")
 
 # Costruzione DataFrame unificato (Technical + Human)
 summary_list = []
@@ -947,7 +947,7 @@ with export_col2:
 
 # --- DETAILED TECHNICAL CONTROL ANALYSIS ---
 st.divider()
-st.subheader("🔍 DETAILED TECHNICAL CONTROL ANALYSIS")
+st.subheader("DETAILED TECHNICAL CONTROL ANALYSIS")
 
 os_choice = st.radio(
     "Select your current Operating System",
@@ -1011,7 +1011,7 @@ for control in controls:
                     unsafe_allow_html=True
                 )
 
-        # 🛡️ Sanitizzazione del dettaglio tecnico proveniente dal JSON
+        # Sanitizzazione del dettaglio tecnico proveniente dal JSON
         safe_details = html.escape(str(control.get('details', 'No additional evidence recorded.')))
 
         st.markdown(
